@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Cadastro de Usuário </title>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+			<!-- Cabeçalho do website -->
+				<header>
+					<h1>Office Works</h1>
+					<h2> Soluçoes inteligentes para escritórios comerciais</h2>
+				</header>
+				
+				<!-- Menu do website -->
+				<nav>
+					<a href="index.html">Início</a>
+					<a href="sobre.html">Sobre</a>
+					<a href="cadastro.html">Cadastro</a>
+					<a class="link-login" href="login.html">Login</a>
+				</nav>
+				
+				<!-- Banner do webSite -->
+		<div class="container-banner">
+			<img class="banner" src ="images/banner_office.png">
+		</div>
+		
+		<section class="container">
+							
+			<!-- Seção de Formulário de cadastro do usuário -->
+			<form class="card" method="post" name="usuario"> 
+			
+			<!-- Formulário de cadastro do usuário -->
+				<div class="card-header"> 
+				<img src="images/register-avatar.png" alt="avatar do usuário" class="card-avatar">
+				<h1> Cadastro de usuário </h1>
+				</div>
+				
+				
+				<!-- Campos do formulário de login -->
+				<div class="card-body">
+					<label class= "card-label" for="nome">Informe seu Nome:</label>
+					<input class="card-field" type="text" name="nome" id="nome" maxlength="48" required>
+					
+					<label class= "card-label" for="cpf">Informe seu CPF:</label>
+					<input class="card-field" type="text" name="cpf" id="cpf" minlength="14" maxlength="14" required>
+					
+					<label class= "card-label" for="nascimento">Informe sua Data de Nascimento:</label>
+					<input class="card-field" type="date" name="nascimento" id="nascimento"required>
+					
+					<label class= "card-label" for="cep">Informe seu CEP:</label>
+					<input class="card-field" type="text" name="cep" id="cep" minlength="9" maxlength="9"required>
+					
+					<label class= "card-label" for="logradouro">Informe seu Logradouro:</label>
+					<input class="card-field" type="text" name="logradouro"  id="logradouro" maxlength="48"required>
+					
+					<label class= "card-label" for="numero">Informe seu Número:</label>
+					<input class="card-field" type="text" name="numero" id="numero"  max="1000000" required>
+					
+					<label class= "card-label" for="bairro">Informe seu Bairro:</label>
+					<input class="card-field" type="text" name="bairro" id="bairro" maxlength="48" required>
+					
+					<label class= "card-label" for="cidade">Informe sua Cidade:</label>
+					<input class="card-field" type="text" name="cidade" id="cidade" maxlength="48" required>
+					
+					<label class= "card-label" for="estado">Informe seu Estado:</label>
+					<input class="card-field" type="text" name="estado" id="estado" maxlength="48" required>
+					
+					<label class= "card-label" for="celular">Informe seu Celular:</label>
+					<input class="card-field" type="tel" name="celular" id="celular" maxlength="16" required>
+					
+					<label class= "card-label" for="email">E-mail</label>
+					<input class="card-field" type="email" placeholder="email@provedor.com" name="email" id="email" minlength="4" maxlength="48"required>
+				
+					<label class= "card-label" for="senha">Senha</label>
+					<input class="card-field" type="password" placeholder="***********" name="senha" id="senha" minlength="8" maxlength="32"required>
+				
+					<label class= "card-label" for="confirma">Confirmar Senha</label>
+					<input class="card-field" type="password" placeholder="***********" name="confirma" id="confirma" minlength="8" maxlength="32" required>
+					
+					<button class="card-button" type="submit">Cadastrar</button>
+					
+				</div>
+				
+				<!-- Link para as páginas externas -->
+				<div class="card-footer">
+					<span class="card-link"><a href="login.html">&#8249 Login</a></span>
+				
+				</div>
+					
+			</form>
+ 
+		</section>
+		<!-- Rodapé do website -->
+		<footer>
+			<h3>Office Works</h3>
+			<p>Botucatu, São Paulo - <span id="year">#</span></p>
+		</footer>
+		
+		<script>
+		// Carrega a data de hoje em uma varíavel. 
+			var dataHoje =  new Date();
+			var ano = dataHoje.getFullYear();
+			
+			// Exibe a data de hoje no elemento SPAN do HTML. 
+			document.getElementById('year').innerHTML= ano;
+			
+			//Carega o conteudo digitado pelo usuario no campo CPF. 
+			var CPF = document.querySelector("#cpf");
+				
+			//Cria uma mascara para o campo CPF. 
+			CPF.addEventListener("blur", function(){
+				if(CPF.value) CPF.value = CPF.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+			});
+			
+			
+			//Carrega o conteudo digitado pelo usuario no campo Confirma Senha
+			var confirmaSenha = document.querySelector("#confirma");
+			
+			//Evento que compara as senhas.
+			confirmaSenha.addEventListener("blur", function(){
+			
+				// CARREGA AS DUAS SENHAS EM VARIÁVEIS.
+				var senha = document.getElementById("senha").value;
+				var confirmaSenha = document.getElementById("confirma").value;
+					
+				if (senha != confirmaSenha){
+					
+					alert("As senhas digitadas não conferem!!!");
+					document.getElementById("senha").focus;
+				}
+			});
+		</script>
+	</body>
+
+</html>

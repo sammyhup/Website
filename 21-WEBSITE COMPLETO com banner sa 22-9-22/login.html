@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Login </title>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+		<!-- Cabeçalho do website -->
+		<header>
+			<h1>Office Works</h1>
+			<h2> Soluçoes inteligentes para escritórios comerciais</h2>
+		</header>
+		
+		<!-- Menu do website -->
+		<nav>
+			<a href="index.html">Início</a>
+			<a href="sobre.html">Sobre</a>
+			<a href="cadastro.html">Cadastro</a>
+			<a class="link-login" href="login.html">Login</a>
+		</nav>
+		
+		<!-- Banner do webSite -->
+		<div class="container-banner">
+			<img class="banner" src ="images/banner_office.png">
+		</div>
+		
+		<section class="container">
+							
+			<!-- Formulário de login - autenticação do usuário -->
+			<form class="card" method="post" name="login"> 
+			
+			<!-- Cabeçalho do formulário -->
+				<div class="card-header"> 
+				<img src="images/user-avatar.png" alt="avatar do usuário" class="card-avatar">
+				<h1> Login </h1>
+				</div>
+				
+				
+				<!-- Campos do formulário de login -->
+				<div class="card-body">
+					<label class= "card-label" for="email">E-mail</label>
+					<input class="card-field" type="email" placeholder="email@provedor.com" name="email" minlength="4" maxlength="48" required>
+				
+					<label class= "card-label" for="senha">Senha</label>
+					<input class="card-field" type="password" placeholder="***********" name="senha" minlength="8" maxlength="32" required>
+				
+					<button class="card-button" type="submit">Entrar</button>
+					<label class="card-check"><input type="checkbox" checked="checked" name="lembrar"> Lembrar-me</label>
+				</div>
+				
+				<!-- Link para as páginas externas -->
+				<div class="card-footer">
+					<span class="card-link"><a href="senha.html"> Recuperar Senha?</a></span>
+					<span class="card-link"><a href="cadastro.html"> Cadastrar-me..</a></span>
+				</div>
+					
+			</form>
+ 
+		</section>
+		<!-- Rodapé do website -->
+		<footer>
+			<h3>Office Works</h3>
+			<p>Botucatu, São Paulo - <span id="year">#</span></p>
+		</footer>
+		
+		<script>
+		// Carrega a data de hoje em uma varíavel. 
+			var dataHoje =  new Date();
+			var ano = dataHoje.getFullYear();
+			
+			// Exibe a data de hoje no elemento SPAN do HTML. 
+			document.getElementById('year').innerHTML= ano;
+		</script>
+	</body>
+
+</html>

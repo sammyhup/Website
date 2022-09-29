@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Recuperar Senha </title>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+		<!-- Cabeçalho do website -->
+			<header>
+				<h1>Office Works</h1>
+				<h2> Soluçoes inteligentes para escritórios comerciais</h2>
+			</header>
+			
+			<!-- Menu do website -->
+			<nav>
+				<a href="index.html">Início</a>
+				<a href="sobre.html">Sobre</a>
+				<a href="cadastro.html">Cadastro</a>
+				<a class="link-login" href="login.html">Login</a>
+			</nav>
+			
+			<!-- Banner do webSite -->
+		<div class="container-banner">
+			<img class="banner" src ="images/banner_office.png">
+		</div>
+			
+		<section class="container">
+							
+			<!-- Formulário de recuperação de senha -->
+			<form class="card" method="post" name="login"> 
+			
+			<!-- Cabeçalho do formulário de recuperação de senha -->
+				<div class="card-header"> 
+				<img src="images/password-avatar.png" alt="avatar do usuário" class="card-avatar">
+				<h1> Recuperar Senha </h1>
+				<p>Preencha somente os números de seu CPF para criar uma nova senha</p>
+				</div>
+				
+				
+				<!-- Campos do formulário de recuperação de senha -->
+				<div class="card-body">
+					<label class= "card-label" for="cpf">CPF</label>
+					<input class="card-field" type="text" name="cpf" id="cpf" minlength="14" maxlength="14" required>
+					
+					<!-- Oculta os campos da nova senha -->					
+					<div id="field-hidden">	
+						<label class= "card-label" for="codigo">Código</label>
+						<input class="card-field" type="text" name="codigo" id="codigo" minlength="6" maxlength="6" required>
+						
+						<label class= "card-label" for="novaSenha">Nova Senha</label>
+						<input class="card-field" type="password"  name="novaSenha" id="novaSenha" minlength="8" maxlength="32" required>
+						
+						<label class= "card-label" for="confirmaSenha">Confirmar Nova Senha</label>
+						<input class="card-field" type="password"  name="confirmaSenha" id="confirmaSenha" minlength="8" maxlength="32" required>
+					</div>	
+				
+					<button id="submit-button" class="card-button" type="submit">Prosseguir</button>
+					
+				</div>
+				
+				<!-- Link para as páginas externas -->
+				<div class="card-footer">
+					<span class="card-link"><a href="login.html">&#8249 Login</a></span>
+				
+				</div>
+					
+			</form>
+ 
+		</section>
+		<!-- Rodapé do website -->
+		<footer>
+			<h3>Office Works</h3>
+			<p>Botucatu, São Paulo - <span id="year">#</span></p>
+		</footer>
+		
+		<script>
+			// Carrega a data de hoje em uma varíavel. 
+			var dataHoje =  new Date();
+			var ano = dataHoje.getFullYear();
+			
+			// Exibe a data de hoje no elemento SPAN do HTML. 
+			document.getElementById('year').innerHTML= ano;
+			
+			//Carega o conteudo digitado pelo usuario no campo CPF. 
+			var CPF = document.querySelector("#cpf");
+				
+			//Cria uma mascara para o campo CPF. 
+			CPF.addEventListener("blur", function(){
+				if(CPF.value) CPF.value = CPF.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+			});
+			
+			//carrega o conteudo do clique no botão.
+			var submitButton = document.querySelector("#submit-button");
+				
+			submitButton.addEventListener("click", function(){
+				
+				//CARREGA O CONTEUDO DA DIV EM UMA VARIAVEL. ( maneira usada atualmente pelas empresas).
+				//var divHidden = document.querySelector("#field-hidden");
+				
+				//divHidden.style.display = "block"; 
+					
+				//CARREGA O CONTEUDO DA DIV EM UMA VARIAVEL. ( MANEIRA ENCURTADA, SIMPLIFICADA).
+				document.getElementById("field-hidden").style.display = "block";
+					
+				document.getElementById("submit-button").innerHTML = "Cadastrar Nova Senha";
+			});
+			
+			//Carrega o conteudo digitado pelo usuario no campo Confirma Senha
+			var confirmaSenha = document.querySelector("#confirmaSenha");
+			
+			//Evento que compara as senhas.
+			confirmaSenha.addEventListener("blur", function(){
+			
+				// CARREGA AS DUAS SENHAS EM VARIÁVEIS.
+				var novaSenha = document.getElementById("novaSenha").value;
+				var confirmaSenha = document.getElementById("confirmaSenha").value;
+					
+				if (novaSenha != confirmaSenha){
+					
+					alert("As senhas digitadas não conferem!!!");
+					document.getElementById("novaSenha").focus;
+				}
+			});	
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Sobre a Office Works </title>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+		<!-- Cabeçalho do website -->
+		<header>
+			<h1>Office Works</h1>
+			<h2> Soluçoes inteligentes para escritórios comerciais</h2>
+		</header>
+		
+		<!-- Menu do website -->
+		<nav>
+			<a href="index.html">Início</a>
+			<a href="sobre.html">Sobre</a>
+			<a href="cadastro.html">Cadastro</a>
+			<a class="link-login" href="login.html">Login</a>
+		</nav>
+		
+		<!-- Banner do webSite -->
+		<div class="container-banner">
+			<img class="banner" src ="images/banner_office.png">
+		</div>
+		
+		<!-- Conteúdo principal do website -->
+		<section class="container">
+			<aside class="side-column">
+				Sed tincidunt quam in enim aliquam, blandit volutpat diam tincidunt. 
+				Sed semper metus sed cursus dignissim. Quisque accumsan, nibh id imperdiet interdum, erat tortor placerat tortor,
+				eu fermentum nisi quam quis magna. Aliquam varius nisi nec metus interdum, sed sodales lacus consectetur.
+			</aside>
+			<article class="center-column">
+				<h2>Sobre a Office Works</h2>
+				Curabitur at commodo enim, ut malesuada purus. Fusce et leo dolor. 
+				Ut vel blandit eros. Vivamus ac arcu libero. Nulla tortor dolor, semper et mi et, vulputate accumsan sem.
+				Aliquam vel iaculis sapien. Ut tortor nisl, auctor suscipit sollicitudin non, blandit at urna. 
+				Nulla aliquet elementum ornare. Praesent auctor nisl metus, non ornare augue sodales id. 
+				In ut ligula non dui hendrerit lobortis. Maecenas ligula erat, ornare sit amet posuere sit amet, auctor pharetra metus. 
+				Etiam elit turpis, bibendum eu ipsum eget, eleifend viverra libero.
+				Phasellus nisl diam, condimentum quis dapibus vitae, sagittis non felis. Sed pretium varius sem a gravida.
+				Curabitur elementum, libero et tempus egestas, metus est condimentum sem, vel posuere leo felis eu massa. 
+				Fusce risus urna, efficitur nec venenatis quis, ultrices et dolor.
+
+				Duis id dui vitae risus dignissim fermentum id at erat. Proin cursus eros vel faucibus venenatis. 
+				Donec at pellentesque massa. Ut vehicula mattis ultrices. Etiam id mauris in sem porta euismod vel facilisis lectus. 
+				Curabitur rhoncus eleifend quam non feugiat. Nunc sit amet placerat ante. Suspendisse pulvinar velit a laoreet tempus. 
+				Nullam mattis mi at purus tristique, sed ultricies lorem luctus. Maecenas condimentum, ligula in semper vulputate, diam mauris
+				tempor lectus, ut commodo leo neque non ligula. Nam porttitor est mauris, eget efficitur dui mattis sed.
+			</article>
+			<aside class="side-column">
+				Sed tincidunt quam in enim aliquam, blandit volutpat diam tincidunt. 
+				Sed semper metus sed cursus dignissim. Quisque accumsan, nibh id imperdiet interdum, 
+				erat tortor placerat tortor, eu fermentum nisi quam quis magna. 
+				Aliquam varius nisi nec metus interdum, sed sodales lacus consectetur.
+			</aside>
+		</section>
+		<!-- Rodapé do website -->
+		<footer>
+			<h3>Office Works</h3>
+			<p>Botucatu, São Paulo - <span id="year">#</span></p>
+		</footer>
+		
+		<!-- Recupera o ano da data de hoje via javascript-->
+		<script>
+		// Carrega a data de hoje em uma varíavel. 
+			var dataHoje =  new Date();
+			var ano = dataHoje.getFullYear();
+			
+			// Exibe a data de hoje no elemento SPAN do HTML. 
+			document.getElementById('year').innerHTML= ano;
+		</script>
+	</body>
+
+</html>
